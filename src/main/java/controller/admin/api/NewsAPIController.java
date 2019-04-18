@@ -34,6 +34,7 @@ public class NewsAPIController extends HttpServlet implements Serializable {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("/application/json");
+        System.out.println("git commit");
         NewsModel newsModel = JsonToModelUtil.of(req.getReader()).toModel(NewsModel.class);
         newsService.updateNews(req,newsModel);
     }
