@@ -11,7 +11,7 @@
     </decorator>
 
     <decorator name="web" page="web.jsp">
-        <pattern>/trang-chu*</pattern>
+        <pattern>/trangChu*</pattern>
     </decorator>
 
     <decorator name="login" page="login.jsp">

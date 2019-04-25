@@ -10,6 +10,7 @@ import utils.SessionUtil;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 public class NewsServiceImpl implements INewsService {
     private INewsDAO newsDAO;
@@ -38,5 +39,15 @@ public class NewsServiceImpl implements INewsService {
     @Override
     public void deleteNews(HttpServletRequest request, long id) {
 
+    }
+
+    @Override
+    public List<NewsModel> findAll() {
+        return newsDAO.getAllNewsModel();
+    }
+
+    @Override
+    public NewsModel findNewsByID(long id) {
+        return newsDAO.findByID(id);
     }
 }
