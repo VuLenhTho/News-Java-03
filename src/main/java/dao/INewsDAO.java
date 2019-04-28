@@ -4,7 +4,7 @@ import model.NewsModel;
 
 import java.util.List;
 
-public interface INewsDAO extends IGenericDAO<NewsModel>{
+public interface INewsDAO extends IGenericDAO<NewsModel> {
     void insertNews(NewsModel newsModel);
 
     List<NewsModel> getAllNewsModel();

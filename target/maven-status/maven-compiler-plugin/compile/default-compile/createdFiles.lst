@@ -8,8 +8,10 @@ dao\IGenericDAO.class
 model\NewsModel.class
 model\RoleModel.class
 dao\impl\UserDAOimpl.class
+dao\ICategoryDAO.class
 mapper\UserMapper.class
 utils\MapClientToSeverUtil.class
+service\ICategoryService.class
 model\UserModel.class
 model\request\UserRequest.class
 service\INewsService.class
@@ -25,10 +27,14 @@ utils\SessionUtil.class
 dao\impl\NewsDAOimpl.class
 dao\IUserDAO.class
 mapper\RowMapper.class
+dao\impl\CategoryDAOimpl.class
 model\CategoryModel.class
+controller\admin\NewsController.class
 controller\web\LoginController.class
 service\IRoleService.class
 service\impl\UserServiceimpl.class
 service\impl\NewsServiceImpl.class
+service\impl\CategoryServiceImpl.class
+mapper\CategoryMapper.class
 mapper\RoleMapper.class
 utils\JsonToModelUtil.class

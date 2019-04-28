@@ -18,7 +18,7 @@ public class NewsAPIController extends HttpServlet implements Serializable {
 
     private INewsService newsService;
 
-    public NewsAPIController(){
+    public NewsAPIController() {
         this.newsService = new NewsServiceImpl();
     }
 
@@ -27,7 +27,7 @@ public class NewsAPIController extends HttpServlet implements Serializable {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("/application/json");
         NewsModel newsModel = JsonToModelUtil.of(req.getReader()).toModel(NewsModel.class);
-        newsService.insertNews(req,newsModel);
+        newsService.insertNews(req, newsModel);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class NewsAPIController extends HttpServlet implements Serializable {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("/application/json");
         NewsModel newsModel = JsonToModelUtil.of(req.getReader()).toModel(NewsModel.class);
-        newsService.updateNews(req,newsModel);
+        newsService.updateNews(req, newsModel);
     }
 
     @Override

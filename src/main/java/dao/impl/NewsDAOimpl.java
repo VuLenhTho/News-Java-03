@@ -3,6 +3,7 @@ package dao.impl;
 import dao.INewsDAO;
 import mapper.NewsMapper;
 import model.NewsModel;
+
 import java.util.List;
 
 public class NewsDAOimpl extends AbtractDAO<NewsModel> implements INewsDAO {

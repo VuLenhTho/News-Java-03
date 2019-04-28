@@ -31,19 +31,19 @@ public class AuthorticationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         UserModel userModel = (UserModel) SessionUtil.getValue(request, "USER");
         String url = request.getRequestURI();
-        if (url.startsWith("/admin")){
-           if (userModel!= null){
-               RoleModel roleModel = roleService.findRoleById(userModel.getRoleID());
-               if (roleModel.getRoleName().equals("admin")){
-                   filterChain.doFilter(request,response);
-               }else {
-                   response.sendRedirect("/login?message=permissionDenied");
-               }
-           }else {
-               response.sendRedirect("/login?message=dontLogin");
-           }
-        }else {
-            filterChain.doFilter(request,response);
+        if (url.startsWith("/admin")) {
+            if (userModel != null) {
+                RoleModel roleModel = roleService.findRoleById(userModel.getRoleID());
+                if (roleModel.getRoleName().equals("admin")) {
+                    filterChain.doFilter(request, response);
+                } else {
+                    response.sendRedirect("/login?message=permissionDenied");
+                }
+            } else {
+                response.sendRedirect("/login?message=dontLogin");
+            }
+        } else {
+            filterChain.doFilter(request, response);
         }
     }
 

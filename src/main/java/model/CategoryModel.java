@@ -1,6 +1,7 @@
 package model;
 
-public class CategoryModel extends AbtractModel {
+public class CategoryModel {
+    private long id;
     private String name;
 
     public String getName() {
@@ -11,4 +12,13 @@ public class CategoryModel extends AbtractModel {
         this.name = name;
     }
 
+
+    public long getId() {
+        return id;
+    }
+
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

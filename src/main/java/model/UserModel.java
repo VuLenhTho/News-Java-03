@@ -2,7 +2,8 @@ package model;
 
 import java.sql.Timestamp;
 
-public class UserModel extends AbtractModel {
+public class UserModel {
+    private long id;
     private String userName;
     private String passWord;
     private String firstName;
@@ -76,5 +77,13 @@ public class UserModel extends AbtractModel {
 
     public void setRoleID(long roleID) {
         this.roleID = roleID;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

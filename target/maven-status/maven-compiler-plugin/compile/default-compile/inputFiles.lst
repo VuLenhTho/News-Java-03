@@ -6,11 +6,16 @@ C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\impl\RoleDAOimp
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\model\AbtractModel.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\controller\web\HomeController.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\model\RoleModel.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\impl\CategoryServiceImpl.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\IRoleDAO.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\security\AuthenticationImpl.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\controller\admin\NewsController.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\INewsDAO.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\impl\AbtractDAO.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\ICategoryService.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\IUserDAO.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\mapper\CategoryMapper.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\impl\CategoryDAOimpl.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\INewsService.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\controller\admin\AdminController.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\model\request\UserRequest.java
@@ -22,6 +27,7 @@ C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\utils\MapClientToSe
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\controller\web\LoginController.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\IGenericDAO.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\utils\SessionUtil.java
+C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\dao\ICategoryDAO.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\IUserService.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\impl\UserServiceimpl.java
 C:\Users\Vu Lenh Tho\IdeaProjects\News-Java-03\src\main\java\service\impl\RoleServiceImpl.java

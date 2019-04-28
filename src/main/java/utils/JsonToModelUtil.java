@@ -1,33 +1,34 @@
 package utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class JsonToModelUtil {
     private String value;
 
-    public JsonToModelUtil(String value){
+    public JsonToModelUtil(String value) {
         this.value = value;
     }
 
-    public static JsonToModelUtil of(BufferedReader reader){
+    public static JsonToModelUtil of(BufferedReader reader) {
         StringBuilder json = new StringBuilder();
         String line;
-        try{
-            while ((line = reader.readLine()) != null){
+        try {
+            while ((line = reader.readLine()) != null) {
                 json.append(line);
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         return new JsonToModelUtil(json.toString());
     }
 
-    public <T> T toModel(Class<T> tClass){
+    public <T> T toModel(Class<T> tClass) {
         try {
-            return new ObjectMapper().readValue(this.value,tClass);
+            return new ObjectMapper().readValue(this.value, tClass);
         } catch (IOException e) {
             return null;
         }

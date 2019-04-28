@@ -1,6 +1,7 @@
 package model;
 
-public class RoleModel extends AbtractModel {
+public class RoleModel {
+    private long id;
     private String roleName;
 
     public String getRoleName() {
@@ -9,5 +10,13 @@ public class RoleModel extends AbtractModel {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

@@ -15,25 +15,31 @@ import java.util.List;
 public class NewsServiceImpl implements INewsService {
     private INewsDAO newsDAO;
 
-    public NewsServiceImpl(){
+    public NewsServiceImpl() {
         newsDAO = new NewsDAOimpl();
     }
+
     @Override
     public void insertNews(HttpServletRequest request, NewsModel newsModel) {
         Date date = new Date();
         newsModel.setCreatedDate(new Timestamp(date.getTime()));
-//        UserModel userModel = (UserModel) SessionUtil.getValue(request,"USER");
-//        newsModel.setCreatedBy(userModel.getUserName());
-
+        UserModel userModel = (UserModel) SessionUtil.getValue(request,"USER");
+        newsModel.setCreatedBy(userModel.getUserName());
+        newsModel.setStatus("PENDING");
         newsDAO.insertNews(newsModel);
     }
 
     @Override
     public void updateNews(HttpServletRequest request, NewsModel newsModel) {
+        NewsModel newsModel1 = newsDAO.findByID(newsModel.getId());
         Date date = new Date();
-        newsModel.setCreatedDate(new Timestamp(date.getTime()));
+        newsModel.setCreatedDate(newsModel1.getCreatedDate());
+        newsModel.setCreatedBy(newsModel1.getCreatedBy());
         newsModel.setModifiedDate(new Timestamp(date.getTime()));
-        newsDAO.updateNews(newsModel.getId(),newsModel);
+        UserModel userModel = (UserModel) SessionUtil.getValue(request,"USER");
+        newsModel.setModifiedBy(userModel.getUserName());
+        newsModel.setStatus(newsModel1.getStatus());
+        newsDAO.updateNews(newsModel.getId(), newsModel);
     }
 
     @Override

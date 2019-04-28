@@ -4,7 +4,7 @@ import model.CategoryModel;
 
 import java.util.List;
 
-public interface ICategoryDAO extends IGenericDAO<CategoryModel>{
+public interface ICategoryDAO extends IGenericDAO<CategoryModel> {
     void insertCategory(CategoryModel categoryModel);
 
     void updateCategory(CategoryModel categoryModel);

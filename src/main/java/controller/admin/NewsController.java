@@ -26,32 +26,40 @@ public class NewsController extends HttpServlet {
     private INewsService newsService;
     private ICategoryService categoryService;
 
-    public NewsController(){
+    public NewsController() {
         this.newsService = new NewsServiceImpl();
         this.categoryService = new CategoryServiceImpl();
     }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<NewsModel> results = newsService.findAll();
-        req.setAttribute("models",results);
+        req.setAttribute("models", results);
         String type = req.getParameter(TYPE);
         String view = EMPTY;
-        if (isNotNull(type)){
-            if (ACTION_EDIT.equals(type)){
-                String id = req.getParameter("id");
-                Long ID = Long.parseLong(id);
-                NewsModel newsModel = newsService.findNewsByID(ID);
-                List<CategoryModel> categoryModelList = categoryService.findAllCategory();
-                req.setAttribute("model",newsModel);
-                req.setAttribute("categoryList",categoryModelList);
-                view ="/views/admin/news/edit.jsp";
-
-            }else if (ACTION_CREATE.equals(type)){
-                view ="/views/admin/news/edit.jsp";
+        if (isNotNull(type)) {
+            if (ACTION_EDIT.equals(type)) {
+                String parameter = req.getParameter("id");
+                if (!isEmpty(parameter) && isNotNull(parameter)) {
+                    long ID = Long.parseLong(parameter);
+                    NewsModel newsModel = newsService.findNewsByID(ID);
+                    if (isNotNull(newsModel)) {
+                        req.setAttribute("model", newsModel);
+                        view = "/views/admin/news/edit.jsp";
+                    } else {
+                        req.setAttribute("message", "NewsModel isn't exist");
+                    }
+                }
             }
-        }else {
-            view ="/views/admin/news/list.jsp";
+            if (ACTION_CREATE.equals(type)){
+                view = "/views/admin/news/edit.jsp";
+            }
+            List<CategoryModel> categoryModelList = categoryService.findAllCategory();
+            req.setAttribute("categoryList", categoryModelList);
+        } else {
+            view = "/views/admin/news/list.jsp";
         }
+
         RequestDispatcher rs = req.getRequestDispatcher(view);
         rs.forward(req, resp);
 
@@ -62,7 +70,17 @@ public class NewsController extends HttpServlet {
         super.doPost(req, resp);
     }
 
-    private boolean isNotNull(Object object){
+
+    private boolean isNotNull(Object object) {
         return object != null;
     }
+
+    private boolean isEmpty(String string) {
+        return EMPTY.equals(string);
+    }
+
+    //category: controller, api, jsp
+    //user: cntroll, api, jsp
+    //role:..
+    //duyet bai viet,pulish
 }

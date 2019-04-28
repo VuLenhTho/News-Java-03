@@ -10,7 +10,7 @@ public interface INewsService {
 
     void updateNews(HttpServletRequest request, NewsModel newsModel);
 
-    void deleteNews(HttpServletRequest request,long id);
+    void deleteNews(HttpServletRequest request, long id);
 
     List<NewsModel> findAll();
 

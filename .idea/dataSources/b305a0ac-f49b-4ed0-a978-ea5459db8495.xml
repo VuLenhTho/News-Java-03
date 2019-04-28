@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="newsmvc@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>8.0.15</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1237,7 +1237,7 @@
       <ColNames>roleid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="283" name="userid">
+    <column id="305" parent="283" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1295,7 +1295,7 @@
     </index>
     <key id="315" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>userid</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="316" parent="283" name="fk_user_role">

@@ -2,7 +2,6 @@ package service;
 
 import model.CategoryModel;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ICategoryService {

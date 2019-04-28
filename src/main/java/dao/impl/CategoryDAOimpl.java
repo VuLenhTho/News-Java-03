@@ -10,13 +10,13 @@ public class CategoryDAOimpl extends AbtractDAO<CategoryModel> implements ICateg
     @Override
     public void insertCategory(CategoryModel categoryModel) {
         String sql = "INSERT INTO category(id, name) VALUES(?, ?) ";
-        insert(sql,categoryModel.getId(),categoryModel.getName());
+        insert(sql, categoryModel.getId(), categoryModel.getName());
     }
 
     @Override
     public void updateCategory(CategoryModel categoryModel) {
         String sql = "UPDATE category SET name = ? WHERE id = ? ";
-        insert(sql,categoryModel.getName(), categoryModel.getId());
+        insert(sql, categoryModel.getName(), categoryModel.getId());
     }
 
     @Override
