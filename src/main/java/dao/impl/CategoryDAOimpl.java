@@ -14,9 +14,9 @@ public class CategoryDAOimpl extends AbtractDAO<CategoryModel> implements ICateg
     }
 
     @Override
-    public void updateCategory(CategoryModel categoryModel) {
+    public void updateCategory(long id,CategoryModel categoryModel) {
         String sql = "UPDATE category SET name = ? WHERE id = ? ";
-        insert(sql, categoryModel.getName(), categoryModel.getId());
+        insert(sql, categoryModel.getName(), id);
     }
 
     @Override
@@ -27,8 +27,8 @@ public class CategoryDAOimpl extends AbtractDAO<CategoryModel> implements ICateg
 
     @Override
     public CategoryModel findCategoryByID(long id) {
-        String sql = "SELECT * FROM category";
-        List<CategoryModel> list = findByProperties(sql, new CategoryMapper());
+        String sql = "SELECT * FROM category WHERE id =?";
+        List<CategoryModel> list = findByProperties(sql, new CategoryMapper(),id);
         return list.isEmpty() ? null : list.get(0);
     }
 }

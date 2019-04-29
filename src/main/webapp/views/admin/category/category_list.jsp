@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Quản lý bài viết</title>
+    <title>Thể loại</title>
 </head>
 <body>
 <div class="main-content">
@@ -30,7 +30,7 @@
                                     <a flag="info"
                                        class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                        data-toggle="tooltip"
-                                       title='Thêm bài viết' href="/admin/news?type=create">
+                                       title='Thêm thể loại' href="/admin/category?type=create">
 <span>
 <i class="fa fa-plus-circle bigger-110 purple"></i>
 </span>
@@ -52,21 +52,19 @@
                                     <thead>
                                     <tr>
                                         <td>Số thứ tự</td>
-                                        <th>Mô tả ngắn</th>
-                                        <th>Nội dung</th>
+                                        <th>Tên thể loại</th>
                                         <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="item" items="${models}">
+                                    <c:forEach var="item" items="${categoryList}">
                                         <tr>
                                             <td>${item.id}</td>
-                                            <th>${item.shortDescription}</th>
-                                            <th>${item.content}</th>
+                                            <th>${item.name}</th>
                                             <th>
                                                 <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
                                                    title="Cập nhập bài viết"
-                                                   href="/admin/news?type=edit&id=${item.id}">
+                                                   href="/admin/category?type=edit&id=${item.id}">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
                                             </th>

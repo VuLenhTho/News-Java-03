@@ -5,7 +5,7 @@ import model.CategoryModel;
 import java.util.List;
 
 public interface ICategoryService {
-    void insertCatergory(CategoryModel categoryModel);
+    void insertCategory(CategoryModel categoryModel);
 
     void updateCategory(CategoryModel categoryModel);
 

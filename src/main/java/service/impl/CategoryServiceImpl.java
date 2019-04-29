@@ -16,13 +16,13 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public void insertCatergory(CategoryModel categoryModel) {
+    public void insertCategory(CategoryModel categoryModel) {
         categoryDAO.insertCategory(categoryModel);
     }
 
     @Override
     public void updateCategory(CategoryModel categoryModel) {
-        categoryDAO.updateCategory(categoryModel);
+        categoryDAO.updateCategory(categoryModel.getId(),categoryModel);
     }
 
     @Override

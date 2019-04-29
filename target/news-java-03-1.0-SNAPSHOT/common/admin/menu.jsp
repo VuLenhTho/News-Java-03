@@ -49,7 +49,14 @@
                 <li>
                     <a href="/admin/news">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        DS bài viết
+                        Danh sách bài viết
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li>
+                    <a href="/admin/category">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách thể loại
                     </a>
                     <b class="arrow"></b>
                 </li>

@@ -40,7 +40,7 @@ public class NewsController extends HttpServlet {
         if (isNotNull(type)) {
             if (ACTION_EDIT.equals(type)) {
                 String parameter = req.getParameter("id");
-                if (!isEmpty(parameter) && isNotNull(parameter)) {
+                if (!isEmpty(parameter)) {
                     long ID = Long.parseLong(parameter);
                     NewsModel newsModel = newsService.findNewsByID(ID);
                     if (isNotNull(newsModel)) {
