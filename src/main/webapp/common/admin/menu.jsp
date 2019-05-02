@@ -60,6 +60,13 @@
                     </a>
                     <b class="arrow"></b>
                 </li>
+                <li>
+                    <a href="/admin/user">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách tài khoản
+                    </a>
+                    <b class="arrow"></b>
+                </li>
             </ul>
         </li>
     </ul>

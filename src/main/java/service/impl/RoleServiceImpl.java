@@ -5,6 +5,8 @@ import dao.impl.RoleDAOimpl;
 import model.RoleModel;
 import service.IRoleService;
 
+import java.util.List;
+
 public class RoleServiceImpl implements IRoleService {
     private IRoleDAO roleDAO;
 
@@ -15,5 +17,10 @@ public class RoleServiceImpl implements IRoleService {
     @Override
     public RoleModel findRoleById(long id) {
         return roleDAO.findRoleById(id);
+    }
+
+    @Override
+    public List<RoleModel> findAllRole() {
+        return roleDAO.findAllRole();
     }
 }

@@ -1220,7 +1220,7 @@
       <RefTableName>category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="302" parent="282" name="roleid">
+    <column id="302" parent="282" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1234,7 +1234,7 @@
     </column>
     <key id="304" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>roleid</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="305" parent="283" name="id">
@@ -1302,7 +1302,7 @@
       <ColNames>roleid</ColNames>
       <RefSchemaName>newsmvc</RefSchemaName>
       <RefTableName>role</RefTableName>
-      <RefColNames>roleid</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>
