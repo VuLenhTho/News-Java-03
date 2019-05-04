@@ -54,6 +54,7 @@
                                         <td>Số thứ tự</td>
                                         <th>Mô tả ngắn</th>
                                         <th>Nội dung</th>
+                                        <th>Trạng thái</th>
                                         <th>Thao tác</th>
                                     </tr>
                                     </thead>
@@ -63,6 +64,7 @@
                                             <td>${item.id}</td>
                                             <th>${item.shortDescription}</th>
                                             <th>${item.content}</th>
+                                            <th>${item.status}</th>
                                             <th>
                                                 <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
                                                    title="Cập nhập bài viết"

@@ -38,7 +38,6 @@ public class NewsServiceImpl implements INewsService {
         newsModel.setModifiedDate(new Timestamp(date.getTime()));
         UserModel userModel = (UserModel) SessionUtil.getValue(request,"USER");
         newsModel.setModifiedBy(userModel.getUserName());
-        newsModel.setStatus(newsModel1.getStatus());
         newsDAO.updateNews(newsModel.getId(), newsModel);
     }
 

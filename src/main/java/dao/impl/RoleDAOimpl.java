@@ -23,4 +23,16 @@ public class RoleDAOimpl extends AbtractDAO<RoleModel> implements IRoleDAO {
 
 
     }
+
+    @Override
+    public void insertRole(RoleModel roleModel) {
+        String sql = "INSERT INTO role(id, rolename) VALUES(?, ?) ";
+        insert(sql, roleModel.getId(), roleModel.getRoleName());
+    }
+
+    @Override
+    public void updateRole(long id, RoleModel roleModel) {
+        String sql = "UPDATE role SET rolename = ? WHERE id = ? ";
+        insert(sql, roleModel.getRoleName(), id);
+    }
 }

@@ -23,4 +23,14 @@ public class RoleServiceImpl implements IRoleService {
     public List<RoleModel> findAllRole() {
         return roleDAO.findAllRole();
     }
+
+    @Override
+    public void insertRole(RoleModel roleModel) {
+        roleDAO.insertRole(roleModel);
+    }
+
+    @Override
+    public void updateRole(RoleModel roleModel) {
+        roleDAO.updateRole(roleModel.getId(),roleModel);
+    }
 }

@@ -9,8 +9,8 @@ import java.util.List;
 public class CategoryDAOimpl extends AbtractDAO<CategoryModel> implements ICategoryDAO {
     @Override
     public void insertCategory(CategoryModel categoryModel) {
-        String sql = "INSERT INTO category(id, name) VALUES(?, ?) ";
-        insert(sql, categoryModel.getId(), categoryModel.getName());
+        String sql = "INSERT INTO category(name) VALUES(?) ";
+        insert(sql, categoryModel.getName());
     }
 
     @Override

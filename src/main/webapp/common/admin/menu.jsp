@@ -41,7 +41,7 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
-                Quản lý bài viết
+                Quản lý trang web
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -64,6 +64,13 @@
                     <a href="/admin/user">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Danh sách tài khoản
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li>
+                    <a href="/admin/role">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Quản lý quyền
                     </a>
                     <b class="arrow"></b>
                 </li>

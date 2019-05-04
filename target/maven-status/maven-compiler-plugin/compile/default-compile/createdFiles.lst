@@ -1,6 +1,8 @@
 dao\INewsDAO.class
 controller\admin\api\NewsAPIController.class
+controller\admin\api\UserAPIController.class
 controller\web\HomeController.class
+controller\admin\UserController.class
 mapper\NewsMapper.class
 filter\AuthorticationFilter.class
 controller\admin\AdminController.class
@@ -16,15 +18,16 @@ model\UserModel.class
 model\request\UserRequest.class
 service\INewsService.class
 service\impl\RoleServiceImpl.class
-model\AbtractModel.class
 dao\impl\RoleDAOimpl.class
 security\Authentication.class
+controller\admin\RoleController.class
 service\IUserService.class
 dao\impl\AbtractDAO.class
 dao\IRoleDAO.class
 security\AuthenticationImpl.class
 utils\SessionUtil.class
 dao\impl\NewsDAOimpl.class
+controller\admin\api\RoleAPIController.class
 dao\IUserDAO.class
 mapper\RowMapper.class
 dao\impl\CategoryDAOimpl.class
@@ -34,7 +37,10 @@ controller\web\LoginController.class
 service\IRoleService.class
 service\impl\UserServiceimpl.class
 service\impl\NewsServiceImpl.class
+controller\admin\CategoryController.class
 service\impl\CategoryServiceImpl.class
 mapper\CategoryMapper.class
 mapper\RoleMapper.class
 utils\JsonToModelUtil.class
+utils\MapUtil.class
+controller\admin\api\CategoryAPIController.class
