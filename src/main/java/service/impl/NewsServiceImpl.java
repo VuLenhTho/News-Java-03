@@ -1,10 +1,14 @@
 package service.impl;
 
 import dao.INewsDAO;
+import dao.IRoleDAO;
 import dao.impl.NewsDAOimpl;
+import dao.impl.RoleDAOimpl;
 import model.NewsModel;
+import model.RoleModel;
 import model.UserModel;
 import service.INewsService;
+import service.IRoleService;
 import utils.SessionUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +18,11 @@ import java.util.List;
 
 public class NewsServiceImpl implements INewsService {
     private INewsDAO newsDAO;
+    private IRoleDAO roleDAO;
 
     public NewsServiceImpl() {
         newsDAO = new NewsDAOimpl();
+        roleDAO = new RoleDAOimpl();
     }
 
     @Override
@@ -47,12 +53,27 @@ public class NewsServiceImpl implements INewsService {
     }
 
     @Override
-    public List<NewsModel> findAll() {
-        return newsDAO.getAllNewsModel();
+    public List<NewsModel> findAll(UserModel userModel) {
+        String creator = null;
+        RoleModel roleModel = roleDAO.findRoleById(userModel.getRoleID());
+        if (roleModel.getRoleName().equals("admin")){
+            return newsDAO.getAllNewsModel(creator);
+        }else if (roleModel.getRoleName().equals("editor")){
+            return newsDAO.getAllNewsModel(userModel.getUserName());
+        }
+        return null;
     }
 
     @Override
     public NewsModel findNewsByID(long id) {
         return newsDAO.findByID(id);
     }
+
+    @Override
+    public void deleteNews(List<Long> ids) {
+        for (Long id: ids) {
+            newsDAO.deleteNews(id);
+        }
+    }
+
 }

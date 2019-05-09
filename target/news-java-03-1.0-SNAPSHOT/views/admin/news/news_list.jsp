@@ -56,6 +56,7 @@
                                         <th>Nội dung</th>
                                         <th>Trạng thái</th>
                                         <th>Thao tác</th>
+                                        <th>Chọn</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -71,6 +72,9 @@
                                                    href="/admin/news?type=edit&id=${item.id}">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
+                                            </th>
+                                            <th>
+                                                <input type="checkbox" name="check" value="${item.id}">
                                             </th>
                                         </tr>
                                     </c:forEach>

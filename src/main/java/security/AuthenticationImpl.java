@@ -32,7 +32,7 @@ public class AuthenticationImpl implements Authentication {
         } else {
             SessionUtil.putValue(request, "USER", userModel);
             RoleModel roleModel = roleService.findRoleById(userModel.getRoleID());
-            if (roleModel.getRoleName().equals("admin")) {
+            if (roleModel.getRoleName().equals("admin") || roleModel.getRoleName().equals("editor")) {
                 return "/admin";
             } else if (roleModel.getRoleName().equals("user")) {
                 return "/trangChu";

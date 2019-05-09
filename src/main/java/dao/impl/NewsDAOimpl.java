@@ -16,9 +16,16 @@ public class NewsDAOimpl extends AbtractDAO<NewsModel> implements INewsDAO {
                 newsModel.getStatus(), newsModel.getCategoryID());
     }
 
-    public List<NewsModel> getAllNewsModel() {
-        String sql = "SELECT * FROM news";
-        return findByProperties(sql, new NewsMapper());
+    public List<NewsModel> getAllNewsModel(String creator) {
+        String sql;
+        if (creator == null){
+            sql = "SELECT * FROM news";
+            return findByProperties(sql, new NewsMapper());
+        }else {
+            sql = "SELECT * FROM news WHERE createdBy = ?";
+            return findByProperties(sql, new NewsMapper(),creator);
+        }
+
     }
 
     @Override
@@ -39,5 +46,12 @@ public class NewsDAOimpl extends AbtractDAO<NewsModel> implements INewsDAO {
         List<NewsModel> list = findByProperties(sql, new NewsMapper(), id);
         return list.isEmpty() ? null : list.get(0);
     }
+
+    @Override
+    public void deleteNews(Long id) {
+        String sql = "DELETE FROM news WHERE id = ?";
+        insert(sql,id);
+    }
+
 
 }

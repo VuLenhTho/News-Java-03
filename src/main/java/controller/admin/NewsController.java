@@ -2,10 +2,15 @@ package controller.admin;
 
 import model.CategoryModel;
 import model.NewsModel;
+import model.RoleModel;
+import model.UserModel;
 import service.ICategoryService;
 import service.INewsService;
+import service.IRoleService;
 import service.impl.CategoryServiceImpl;
 import service.impl.NewsServiceImpl;
+import service.impl.RoleServiceImpl;
+import utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +38,8 @@ public class NewsController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<NewsModel> results = newsService.findAll();
+        UserModel userModel = (UserModel) SessionUtil.getValue(req,"USER");
+        List<NewsModel> results = newsService.findAll(userModel);
         req.setAttribute("models", results);
         String type = req.getParameter(TYPE);
         String view = EMPTY;
@@ -45,19 +51,19 @@ public class NewsController extends HttpServlet {
                     NewsModel newsModel = newsService.findNewsByID(ID);
                     if (isNotNull(newsModel)) {
                         req.setAttribute("model", newsModel);
-                        view = "/views/admin/news/edit.jsp";
+                        view = "/views/admin/news/edit_news.jsp";
                     } else {
                         req.setAttribute("message", "NewsModel isn't exist");
                     }
                 }
             }
             if (ACTION_CREATE.equals(type)){
-                view = "/views/admin/news/edit.jsp";
+                view = "/views/admin/news/edit_news.jsp";
             }
             List<CategoryModel> categoryModelList = categoryService.findAllCategory();
             req.setAttribute("categoryList", categoryModelList);
         } else {
-            view = "/views/admin/news/list.jsp";
+            view = "/views/admin/news/news_list.jsp";
         }
 
         RequestDispatcher rs = req.getRequestDispatcher(view);
@@ -79,8 +85,5 @@ public class NewsController extends HttpServlet {
         return EMPTY.equals(string);
     }
 
-    //category: controller, api, jsp
-    //user: cntroll, api, jsp
-    //role:..
-    //duyet bai viet,pulish
+
 }

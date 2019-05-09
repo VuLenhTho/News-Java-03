@@ -36,8 +36,11 @@ public class AuthorticationFilter implements Filter {
                 RoleModel roleModel = roleService.findRoleById(userModel.getRoleID());
                 if (roleModel.getRoleName().equals("admin")) {
                     filterChain.doFilter(request, response);
-                } else {
+                } else if (roleModel.getRoleName().equals("editor") && (url.startsWith("/admin/news") || url.equals("/admin"))){
+                    filterChain.doFilter(request, response);
+                }else {
                     response.sendRedirect("/login?message=permissionDenied");
+
                 }
             } else {
                 response.sendRedirect("/login?message=dontLogin");

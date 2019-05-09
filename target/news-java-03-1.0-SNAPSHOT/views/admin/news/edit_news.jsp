@@ -83,21 +83,24 @@
                     </div>
                     <br>
                     <br>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right">Trạng thái</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" id="status" name="status">
-                                <c:if test="${model.status == 'PENDING'}">
-                                    <option value="${model.status}" selected="selected"> ${model.status} </option>
-                                    <option value="APPROVED"> APPROVED </option>
-                                </c:if>
-                                <c:if test="${model.status == 'APPROVED'}">
-                                    <option value="${model.status}" selected="selected"> ${model.status} </option>
-                                    <option value="PENDING"> PENDING </option>
-                                </c:if>
-                            </select>
+
+                    <c:if test="${model.status == 'PENDING' || model.status == 'APPROVED'}">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Trạng thái</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="status" name="status">
+                                    <c:if test="${model.status == 'PENDING'}">
+                                        <option value="${model.status}" selected="selected"> ${model.status} </option>
+                                        <option value="APPROVED"> APPROVED </option>
+                                    </c:if>
+                                    <c:if test="${model.status == 'APPROVED'}">
+                                        <option value="${model.status}" selected="selected"> ${model.status} </option>
+                                        <option value="PENDING"> PENDING </option>
+                                    </c:if>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                    </c:if>
                     <br>
                     <br>
                     <div class="form-group">
